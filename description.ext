@@ -1,0 +1,4 @@
+enableDebugConsole = 2;
+
+author="10Dozen";
+OnLoadName = "DZN ROWING BOATS";
