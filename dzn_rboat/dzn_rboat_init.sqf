@@ -6,7 +6,7 @@
 // ***********************************************
 
 dzn_rboat_fatigueCost		= 0.05; 	// how many fatigue is spent on each row action
-dzn_rboat_fatigueLimit		= 0.95;	// fatigue limit to row
+dzn_rboat_fatigueLimit		= 0.8;	// fatigue limit to row
 dzn_rboat_classlist 		= ["B_Boat_Transport_01_F"];	// List of units classnames can be applied
 
 // Class characterstics in format - [ @Classname, [@Time, @AccelerationPerRow, @MaxRowSpeed (KPH)] ]
@@ -131,7 +131,7 @@ dzn_fnc_rboat_rowClient = {
 	if (isEngineOn (vehicle player)) exitWith {
 		501 cutText ["You need to turn engine off to row","PLAIN DOWN", 1];
 	};	
-	if (getFatigue player > 0.8) exitWith {
+	if (getFatigue player > dzn_rboat_fatigueLimit) exitWith {
 		501 cutText ["You are too tired to row. Get a break!","PLAIN DOWN", 1];		
 	};
 	
